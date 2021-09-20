@@ -1,4 +1,3 @@
-// https://jsonplaceholder.typicode.com/users
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.class';
@@ -10,10 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
+  readonly url : string = 'https://jsonplaceholder.typicode.com/users'
+
   constructor(private http: HttpClient) {}
 
   public getUsers(): Observable<User[]> {
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
+    return this.http.get<User[]>(this.url);
   }
 
 }
