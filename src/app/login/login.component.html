@@ -1,0 +1,9 @@
+<form [formGroup]="form" (submit)="submitLogin()">
+  <label>Email</label>
+  <input type="text" class="form-control" [formControl]="propEmail">
+
+  <label>Password</label>
+  <input type="password" class="form-control" [formControl]="propPass">
+
+  <button class="btn btn-success">Se connecter </button>
+</form>

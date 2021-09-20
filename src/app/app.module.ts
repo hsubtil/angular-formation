@@ -4,8 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { LoginModule } from './login/login.module';
+import { InterceptorService } from './core/interceptors/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,13 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     AppRoutingModule,
     LayoutModule,
+    LoginModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
