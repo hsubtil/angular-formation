@@ -4,7 +4,6 @@ import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
     selector: 'app-users',
-    styleUrls: ['./users.component.css'],
     templateUrl: 'users.component.html'
 })
 export class UsersComponent implements OnInit {

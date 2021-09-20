@@ -84,8 +84,4 @@ describe('UserComponent', () => {
     expect(component.users.length).toEqual(2)
   })
 
-  it('HTML content should contain 10 users', async () => {
-    const cards = template.querySelectorAll('.card')
-    expect(cards.length).toEqual(component.users.length)
-  })
 })

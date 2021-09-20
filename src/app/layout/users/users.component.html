@@ -1,6 +1,3 @@
-<div *ngFor='let user of users' class="card user-list">
-  <div class="card-body">
-    <h5 class="card-title name">{{user.name}}  ( {{user.username}} )</h5>
-    <a class="card-text" href="mailto:{{user.email}}">{{user.email}}</a>
-  </div>
-</div>
+<app-user-card *ngFor='let user of users' [user]='user'></app-user-card>
+
+
