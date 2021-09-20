@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit {
     public getUsers() {
       this.userService.getUsers().subscribe((users: User[]) => {
         this.users = users;
-        console.log(`Get ${this.users.length} users`)
+        console.info(`[UsersComponent] Get ${this.users.length} users`)
       })
     }
 
